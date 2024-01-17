@@ -1,6 +1,5 @@
 import nextArrow from "../assets/svg/showMoreArrow.svg";
 function GridCard(props: CardDatatypes) {
-  console.log(`Img address: ${props.logo}`);
   return (
     <div
       className={`w-[65vw] md:w-auto group/card md:py-[21px] pl-5 pr-[25px] py-5 md:pl-[21px] md:pr-14 bg-white md:hover:bg-hoverGreen md:cursor-pointer border border-borderGray rounded-xl relative ${props.styles}`}
