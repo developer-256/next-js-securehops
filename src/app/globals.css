@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Adding media queris for grid */
+    @media (min-width: 1024px){
+      .gridCols24 {
+        grid-template-columns: repeat(24, minmax(0, 1fr));
+      }
+    }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+      .gridCols2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Adding Font */
+    @font-face {
+      font-family: 'Outfit'; /*Name in .tff file*/
+      src: url(./assets/font/Outfit-VariableFont_wght.ttf);
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  /* Hide scrollBar from grid */
+  @layer utilities {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+     /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .fixWidth {
+      padding-left: calc((100vw - 1440px) / 2);
+      padding-right: calc((100vw - 1440px) / 2);
+    }
+  }
