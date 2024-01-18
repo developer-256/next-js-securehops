@@ -32,16 +32,19 @@ const ServicesNavComponent = (props: any) => {
   const MouseIsOut = () => {
     setIsHover(false);
   };
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
     <div
-      className="relative"
+      className="md:relative flex flex-col items-center justify-center w-full md:w-auto"
       onMouseEnter={MouseIsOver}
       onMouseLeave={MouseIsOut}
     >
       <li
-        className={`flex items-center gap-2 cursor-pointer ${
-          isHover ? "md:text-hoverGray" : ""
+        onClick={toggleIsOpen}
+        className={`flex items-center gap-2 cursor-pointer justify-center w-full ${
+          isHover ? "md:text-hoverGray text-regularText" : ""
         }`}
       >
         <span className="">{props.name}</span>
@@ -50,14 +53,24 @@ const ServicesNavComponent = (props: any) => {
         </span>
       </li>
 
+      {/* laptop and pc dropdown */}
       {isHover && (
-        <div className="absolute hidden md:block top-5 left-0 min-w-72 bg-transparent">
-          <ul className="flex flex-col border border-hoverGray my-7 p-5 rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px] relative z-40">
+        <div className="absolute hidden md:block top-5 left-0 w-full md:min-w-72 bg-transparent">
+          <ul className="flex flex-col border border-hoverGray my-7 p-5 rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px] relative z-40 shadow-lg">
             {serviceLinks.map((link) => {
               return <Services link={link.href} name={link.name} />;
             })}
           </ul>
         </div>
+      )}
+
+      {/* mobile and tabs dropdown */}
+      {isOpen && (
+        <ul className="md:hidden flex flex-col border border-hoverGray my-7 p-2 md:p-5 w-full items-center rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px]">
+          {serviceLinks.map((link) => {
+            return <Services link={link.href} name={link.name} />;
+          })}
+        </ul>
       )}
     </div>
   );
