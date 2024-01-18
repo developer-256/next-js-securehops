@@ -2,12 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ServicesNavComponent from "./servicesNavComponent";
 import OtherNavComponents from "./otherNavComponents";
 import logo from "../assets/svg/logo.svg";
 import mobileLogo from "../assets/svg/mobileLogo.svg";
-import hamburger from "../assets/svg/hamburger.svg";
+import { Spin as Hamburger } from "hamburger-react";
+import { useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -19,6 +21,7 @@ const navLinks = [
 
 function NavBar() {
   const pathName = usePathname();
+  const [isOpen, setIsOpen] = useState(false); // state for opening and closing mobile navbar menu
 
   return (
     <header className="sticky top-0  border border-navGray z-50 bg-white/40 backdrop-blur-[6px]">
@@ -47,7 +50,7 @@ function NavBar() {
         </ul>
 
         {/* last section ie button */}
-        <button className="px-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen md:hover:ring-offset-1 md:hover:ring-newGreen md:hover:ring">
+        <button className="px-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen">
           Get Started
         </button>
       </div>
@@ -56,37 +59,41 @@ function NavBar() {
       {/* for mobile and tabs */}
       <div className="flex flex-col items-center justify-center px-3 py-3 md:hidden md:px-12">
         {/* starting section ie logo */}
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full px-3">
           <Link href={"/"}>
             <Image src={mobileLogo} alt="logo" />
           </Link>
-
-          <button>
-            <Image src={hamburger} alt="options" />
-          </button>
+          <Hamburger
+            size={24}
+            onToggle={() => {
+              setIsOpen(!isOpen);
+            }}
+          />
         </div>
 
-        <div className="flex flex-col">
-          <ul className="mx-auto flex flex-col justify-center items-center rounded-full px-16 gap-10  text-[15px] font-medium max-w-[600px]  ">
-            {navLinks.map((link) => {
-              const isActive = pathName === link.href;
+        {isOpen && (
+          <div id="navMenu" className="flex flex-col">
+            <ul className="mx-auto flex flex-col justify-center items-center rounded-full px-16 gap-10  text-[15px] font-medium max-w-[600px]">
+              {navLinks.map((link) => {
+                const isActive = pathName === link.href;
 
-              return link.name === "Services" ? (
-                <ServicesNavComponent name={link.name} />
-              ) : (
-                <OtherNavComponents
-                  link={link.href}
-                  name={link.name}
-                  IsActive={isActive}
-                />
-              );
-            })}
-          </ul>
+                return link.name === "Services" ? (
+                  <ServicesNavComponent name={link.name} />
+                ) : (
+                  <OtherNavComponents
+                    link={link.href}
+                    name={link.name}
+                    IsActive={isActive}
+                  />
+                );
+              })}
+            </ul>
 
-          <button className="px-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen md:hover:ring-offset-1 md:hover:ring-newGreen md:hover:ring">
-            Get Started
-          </button>
-        </div>
+            <button className="px-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen">
+              Get Started
+            </button>
+          </div>
+        )}
       </div>
     </header>
   );

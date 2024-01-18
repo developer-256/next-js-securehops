@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const OtherNavComponents = (props: any) => {
+const OtherNavComponents = (props: navLinkDatatypes) => {
   return (
     <Link href={props.link} key={props.name}>
       <li className="cursor-pointer group/li">
@@ -21,3 +21,9 @@ const OtherNavComponents = (props: any) => {
 };
 
 export default OtherNavComponents;
+
+interface navLinkDatatypes {
+  name: string;
+  link: string;
+  IsActive: boolean;
+}
