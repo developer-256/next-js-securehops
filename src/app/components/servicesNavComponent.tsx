@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Services from "./services";
-import { serviceLinks } from "./serviceLinks";
+import { serviceLinks } from "./data";
 
 const navArrow = (
   <svg
@@ -38,7 +38,7 @@ const ServicesNavComponent = (props: any) => {
           isHover ? "md:text-hoverGray text-regularText" : ""
         }`}
       >
-        <span className="">{props.name}</span>
+        <span className="text-regularText">{props.name}</span>
         <span className={`pt-1 ${isHover ? "rotate-180 pb-2" : ""}`}>
           {navArrow}
         </span>
@@ -46,8 +46,8 @@ const ServicesNavComponent = (props: any) => {
 
       {/* laptop and pc dropdown */}
       {isHover && (
-        <div className="absolute hidden md:block top-5 left-0 w-full md:min-w-72 bg-transparent">
-          <ul className="flex flex-col border border-hoverGray my-7 p-5 rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px] relative z-40 shadow-lg">
+        <div className="absolute hidden md:block top-5 left-0 w-full md:min-w-72 ">
+          <ul className="flex flex-col border border-hoverGray my-7 p-5 rounded-xl text-regularText gap-1 bg-white/95 relative z-40 shadow-lg">
             {serviceLinks.map((link, index) => {
               return <Services link={link.href} name={link.name} key={index} />;
             })}

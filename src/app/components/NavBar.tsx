@@ -3,20 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { navLinks } from "./data";
 import ServicesNavComponent from "./servicesNavComponent";
 import OtherNavComponents from "./otherNavComponents";
 import logo from "../assets/svg/logo.svg";
 import mobileLogo from "../assets/svg/mobileLogo.svg";
 import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "" },
-  { name: "Blogs", href: "/blogs" },
-  { name: "Contact Us", href: "/contact" },
-];
 
 function NavBar() {
   const pathName = usePathname();

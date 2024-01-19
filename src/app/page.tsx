@@ -9,7 +9,6 @@ export default function Home() {
       <MainImg />
       <Grid />
       <BanUnderGrid />
-      <Footer />
     </main>
   );
 }

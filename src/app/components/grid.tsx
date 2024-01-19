@@ -1,30 +1,30 @@
 "use client";
 import GridCard from "./gridCard";
-import { Data } from "./cardData";
+import { gridCardsData } from "./data";
 
 function Grid() {
-  const listItems = Data.map((Data) => {
+  const listItems = gridCardsData.map((gridCardsData) => {
     return (
       <GridCard
-        key={Data.id}
-        styles={Data.styles}
-        logo={Data.logo}
-        heading={Data.heading}
-        paragraph={Data.content}
-        paragraph2={Data.content2}
-        link={Data.link}
+        key={gridCardsData.id}
+        styles={gridCardsData.styles}
+        logo={gridCardsData.logo}
+        heading={gridCardsData.heading}
+        paragraph={gridCardsData.content}
+        paragraph2={gridCardsData.content2}
+        link={gridCardsData.link}
       />
     );
   });
 
   // grid-cols-24 is a custom function in index.css
   return (
-    <div className="bg-newGray px-3 md:px-12 py-[100px]">
+    <div className="bg-newGray px-3 md:px-12 py-10 md:py-[100px]">
       <div className="flex flex-col items-center pb-[40px] pt-5">
-        <h1 className="text-newGreen text-center font-bold text-[40px]">
+        <h1 className="text-newGreen text-center font-bold text-3xl md:text-[40px]">
           Our Services
         </h1>
-        <p className="max-w-[583px] text-center pt-2 leading-5 text-regularText">
+        <p className="max-w-[583px] px-2 text-center pt-2 leading-5 text-regularText">
           We have the expertise to ensure that your network infrastructure is
           secure, efficient, and ready to meet the challenges of the future.
         </p>
