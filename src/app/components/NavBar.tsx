@@ -28,21 +28,27 @@ function NavBar() {
       <div className="items-center justify-between hidden px-3 py-3 md:flex md:px-6 lg:px-12">
         {/* starting section ie logo */}
         <Link href={"/"}>
-          <Image className="md:w-32 lg:w-auto" src={logo} alt="logo" />
+          <Image
+            className="md:w-32 lg:w-auto"
+            src={logo}
+            alt="logo"
+            priority={true}
+          />
         </Link>
 
         {/* middle section */}
         <ul className="mx-auto flex justify-between items-center rounded-full  gap-10  text-[15px] font-medium max-w-[600px]  ">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isActive = pathName === link.href;
 
             return link.name === "Services" ? (
-              <ServicesNavComponent name={link.name} />
+              <ServicesNavComponent name={link.name} key={index} />
             ) : (
               <OtherNavComponents
                 link={link.href}
                 name={link.name}
                 IsActive={isActive}
+                key={index}
               />
             );
           })}
@@ -73,16 +79,17 @@ function NavBar() {
         {isOpen && (
           <div id="navMenu" className="flex flex-col w-full">
             <ul className="flex flex-col justify-center items-center w-full gap-10 text-[15px] font-medium">
-              {navLinks.map((link) => {
+              {navLinks.map((link, index) => {
                 const isActive = pathName === link.href;
 
                 return link.name === "Services" ? (
-                  <ServicesNavComponent name={link.name} />
+                  <ServicesNavComponent name={link.name} key={index} />
                 ) : (
                   <OtherNavComponents
                     link={link.href}
                     name={link.name}
                     IsActive={isActive}
+                    key={index}
                   />
                 );
               })}

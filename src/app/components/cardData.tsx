@@ -5,6 +5,7 @@ import gridCard3 from "../assets/svg/gridCard3.svg";
 import gridCard4 from "../assets/svg/gridCard4.svg";
 import gridCard5 from "../assets/svg/gridCard5.svg";
 import gridCard6 from "../assets/svg/gridCard6.svg";
+
 export const Data = [
   {
     id: 0,
@@ -15,6 +16,7 @@ export const Data = [
       "We pride ourselves on being a premier provider of IT Solutions Outsourcing. We offer a comprehensive range of services.",
     content2:
       "We're a leading IT Solutions Outsourcing provider offering a diverse range of services and solutions.",
+    link: "/vulnerability",
   },
   {
     id: 1,
@@ -25,6 +27,7 @@ export const Data = [
       "We conduct thorough assessments of your network, applications, and systems, mimicking real-world cyber threats to uncover vulnerabilities and weaknesses. Our experts assess the security of your web applications, identifying potential entry points for attackers and providing actionable.",
     content2:
       "We bolster security by pinpointing and fixing vulnerabilities in networks and web apps.",
+    link: "/it-solution",
   },
   {
     id: 2,
@@ -35,6 +38,7 @@ export const Data = [
       "We conduct thorough assessments of your network, applications, and systems, mimicking real-world cyber threats to uncover existing vulnerabilities. Our experts assess the security of your web applications, identifying potential entry points for attackers and providing actionable recommendations to enhance your application security. Our thorough penetration testing services go beyond surface-level checks.",
     content2:
       "We find vulnerabilities, evaluate web security, offer recommendations through thorough testing.",
+    link: "/it-support",
   },
   {
     id: 3,
@@ -45,6 +49,7 @@ export const Data = [
       "We specialize in delivering cybersecurity services designed to fortify your digital assets and protect your organization from ever-evolving cyber threats. Our team is committed to providing tailored solutions.",
     content2:
       "We specialize in fortifying digital assets through personalized and effective cybersecurity solutions.",
+    link: "/penetration",
   },
   {
     id: 4,
@@ -55,6 +60,7 @@ export const Data = [
       "We specialize in delivering cybersecurity services designed to fortify your digital assets and protect your organization from ever-evolving cyber threats. Our team of certified cybersecurity professionals is committed to providing tailored solutions.",
     content2:
       "We fortify digital assets with tailored cybersecurity solutions through certified professionals.",
+    link: "/data-center",
   },
   {
     id: 5,
@@ -65,6 +71,7 @@ export const Data = [
       "Proactively identify and remediate vulnerabilities with our thorough assessments and simulated attacks. Our penetration testing services ensure that your defenses are robust against real-world threats. Rely on our 24/7 SOC manned by skilled analysts and equipped with advanced tools.",
     content2:
       "We find and fix vulnerabilities with assessments, tests, and a 24/7 manned SOC for robust defense.",
+    link: "/cyber-sec",
   },
   {
     id: 6,
@@ -75,5 +82,6 @@ export const Data = [
       "Technical support tailored to your business needs. Our experts are available 24/7 to troubleshoot hardware issues, resolve software glitches, and address user-related concerns. Elevate your server management with our certified administrators.",
     content2:
       "24/7 support for hardware, software, users; elevate server management with certified admins.",
+    link: "/soc-service",
   },
 ];

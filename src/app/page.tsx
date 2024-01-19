@@ -4,9 +4,9 @@ import BanUnderGrid from "./components/BanUnderGrid";
 
 export default function Home() {
   return (
-    <main className="h-[50rem]">
-      {/* <MainImg /> */}
-      {/* <Grid /> */}
+    <main className="">
+      <MainImg />
+      <Grid />
       {/* <BanUnderGrid /> */}
     </main>
   );

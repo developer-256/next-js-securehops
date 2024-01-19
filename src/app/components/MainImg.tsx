@@ -1,5 +1,6 @@
 import mainImg from "../assets/svg/main_Img.svg";
 import exploreArrow from "../assets/svg/exploreArrow.svg";
+import Image from "next/image";
 
 function MainImg() {
   return (
@@ -26,13 +27,14 @@ function MainImg() {
           </button>
           <button className="flex items-center gap-2 px-9 py-3 border-[1.5px] border-newDarkGray text-regularText rounded-full">
             <span>Explore</span>
-            <img src={exploreArrow} />
+            <Image src={exploreArrow} alt="arr" />
           </button>
         </div>
       </div>
 
       <div>
-        <img src={mainImg} />
+        {/* <img src={mainImg} /> */}
+        <Image src={mainImg} alt="mainImg" />
       </div>
     </div>
   );

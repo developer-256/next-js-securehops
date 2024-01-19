@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Services from "./services";
+import { serviceLinks } from "./serviceLinks";
 
 const navArrow = (
   <svg
@@ -10,19 +11,9 @@ const navArrow = (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" />
+    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" />
   </svg>
 );
-
-const serviceLinks = [
-  { name: "Vulnerability Assessment", href: "/vulnerability" },
-  { name: "IT Solutions", href: "/it-solution" },
-  { name: "IT Support", href: "/it-support" },
-  { name: "Penetration Testing", href: "/penetration" },
-  { name: "Data Center Services", href: "/data-center" },
-  { name: "Cyber Security Services", href: "/cyber-sec" },
-  { name: "SOC Services ", href: "/soc-service" },
-];
 
 const ServicesNavComponent = (props: any) => {
   const [isHover, setIsHover] = useState(false);
@@ -57,8 +48,8 @@ const ServicesNavComponent = (props: any) => {
       {isHover && (
         <div className="absolute hidden md:block top-5 left-0 w-full md:min-w-72 bg-transparent">
           <ul className="flex flex-col border border-hoverGray my-7 p-5 rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px] relative z-40 shadow-lg">
-            {serviceLinks.map((link) => {
-              return <Services link={link.href} name={link.name} />;
+            {serviceLinks.map((link, index) => {
+              return <Services link={link.href} name={link.name} key={index} />;
             })}
           </ul>
         </div>
@@ -67,8 +58,8 @@ const ServicesNavComponent = (props: any) => {
       {/* mobile and tabs dropdown */}
       {isOpen && (
         <ul className="md:hidden flex flex-col border border-hoverGray my-7 p-2 md:p-5 w-full items-center rounded-xl text-regularText gap-1 bg-white/40 backdrop-blur-[6px]">
-          {serviceLinks.map((link) => {
-            return <Services link={link.href} name={link.name} />;
+          {serviceLinks.map((link, index) => {
+            return <Services link={link.href} name={link.name} key={index} />;
           })}
         </ul>
       )}

@@ -1,3 +1,4 @@
+"use client";
 import GridCard from "./gridCard";
 import { Data } from "./cardData";
 
@@ -11,6 +12,7 @@ function Grid() {
         heading={Data.heading}
         paragraph={Data.content}
         paragraph2={Data.content2}
+        link={Data.link}
       />
     );
   });
