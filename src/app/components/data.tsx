@@ -1,3 +1,4 @@
+// grid section images
 import gridCard0 from "../assets/svg/gridCard0.svg";
 import gridCard1 from "../assets/svg/gridCard1.svg";
 import gridCard2 from "../assets/svg/gridCard2.svg";
@@ -5,6 +6,14 @@ import gridCard3 from "../assets/svg/gridCard3.svg";
 import gridCard4 from "../assets/svg/gridCard4.svg";
 import gridCard5 from "../assets/svg/gridCard5.svg";
 import gridCard6 from "../assets/svg/gridCard6.svg";
+
+// footer images
+
+import FooterArrow from "../assets/svg/footerArrow.svg";
+import linkedin from "../assets/svg/linkedin.svg";
+import facebook from "../assets/svg/facebook.svg";
+import x from "../assets/svg/x.svg";
+import insta from "../assets/svg/insta.svg";
 
 export const navLinks = [
   { name: "Home", href: "/" },
@@ -107,24 +116,28 @@ export const serviceLinks = [
 export const FooterData = {
   socialLinks: [
     {
-      url: "https://www.linkedin.com/company/securehops/mycompany/",
-      name: "LinkedIn",
-      //   arrow: FooterArrow,
-    },
-    {
       url: "https://www.facebook.com/Securehops/",
       name: "Facebook",
-      //   arrow: FooterArrow,
+      arrow: FooterArrow,
+      logo: { facebook },
     },
     {
       url: "https://www.instagram.com/securehops/?hl=en",
       name: "Instagram",
-      //   arrow: FooterArrow,
+      arrow: FooterArrow,
+      logo: { insta },
+    },
+    {
+      url: "https://www.linkedin.com/company/securehops/mycompany/",
+      name: "LinkedIn",
+      arrow: FooterArrow,
+      logo: { linkedin },
     },
     {
       url: "https://twitter.com/Securehops",
       name: "Twitter",
-      //   arrow: FooterArrow,
+      arrow: FooterArrow,
+      logo: { x },
     },
   ],
   quickLinks: [
@@ -134,19 +147,19 @@ export const FooterData = {
     },
     {
       name: "Services",
-      url: "/services/it-support",
+      url: "/",
     },
     {
       name: "Cybersecurity",
-      url: "/cybersecurity",
+      url: "/",
     },
     {
-      name: "Solutions",
-      url: "/solutions",
+      name: "Blogs",
+      url: "/blog",
     },
     {
-      name: "SOC",
-      url: "/soc",
+      name: "Contact Us",
+      url: "/contact",
     },
   ],
   digitalServices: [

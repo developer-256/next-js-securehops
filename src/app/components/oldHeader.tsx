@@ -2,9 +2,9 @@ import mainImg from "../assets/svg/main_Img.svg";
 import exploreArrow from "../assets/svg/exploreArrow.svg";
 import Image from "next/image";
 
-function MainImg() {
+function Header() {
   return (
-    <div className="flex items-center justify-between pb-32 pt-16 px-3 md:px-12 ">
+    <header className="flex items-center justify-between pb-32 pt-16 px-3 md:px-12 ">
       <div>
         <p className="text-xl font-semibold text-regularText mb-2">
           Your Security Partner
@@ -36,8 +36,8 @@ function MainImg() {
         {/* <img src={mainImg} /> */}
         <Image src={mainImg} alt="mainImg" />
       </div>
-    </div>
+    </header>
   );
 }
 
-export default MainImg;
+export default Header;

@@ -2,11 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { navLinks } from "./data";
 import ServicesNavComponent from "./servicesNavComponent";
 import OtherNavComponents from "./otherNavComponents";
 import logo from "../assets/svg/logo.svg";
+
 import mobileLogo from "../assets/svg/mobileLogo.svg";
 import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
