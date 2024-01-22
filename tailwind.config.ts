@@ -13,11 +13,14 @@ const config: Config = {
         newGray: '#f5f5f5',
         borderGray: '#C7C7C7',
         newDarkGray: '#888888',
+        headerGray: '#777777',
         hoverGray: '#9B9B9B',
         hoverGreen: '#e2f5f2',
         newGreen: '#16B198',
+        headerGreen: '#e1fffa',
+        headerGreenBorder: '#A8EBE0',
         BanUndGrdGreen: "#16B198E5",
-        regularText: '#333333'
+        regularText: '#333333',
       },
       fontFamily: {
         'Outfit': ['Outfit', 'sans-serif'], /*second one is for case when 1st is not supported*/

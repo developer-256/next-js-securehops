@@ -16,7 +16,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false); // state for opening and closing mobile navbar menu
 
   return (
-    <header className="sticky top-0  border border-navGray z-50 bg-white/40 backdrop-blur-[6px]">
+    <nav className="sticky top-0  border border-navGray z-50 bg-white/40 backdrop-blur-[6px]">
       {/* for large screens */}
       <div className="items-center justify-between hidden px-3 py-3 md:flex md:px-6 lg:px-12">
         {/* starting section ie logo */}
@@ -70,8 +70,8 @@ function NavBar() {
         </div>
 
         {isOpen && (
-          <div id="navMenu" className="flex flex-col w-full">
-            <ul className="flex flex-col justify-center items-center w-full gap-10 text-[15px] font-medium">
+          <div id="navMenu" className="flex flex-col w-full px-6">
+            <ul className="flex flex-col justify-center items-center w-full gap-9 pt-3 text-[15px] font-medium">
               {navLinks.map((link, index) => {
                 const isActive = pathName === link.href;
 
@@ -88,13 +88,13 @@ function NavBar() {
               })}
             </ul>
 
-            <button className="px-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen">
+            <button className="px-6 my-6 py-3 text-sm font-semibold text-white rounded-full bg-newGreen">
               Get Started
             </button>
           </div>
         )}
       </div>
-    </header>
+    </nav>
   );
 }
 
