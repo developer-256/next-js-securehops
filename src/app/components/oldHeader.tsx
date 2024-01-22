@@ -16,7 +16,7 @@ function Header() {
           Secure Tomorrow
         </h1>
         <p className="max-w-[389px] text-regularText mt-5 leading-5">
-          With years of experience in the security industry, we're at the
+          With years of experience in the security industry, we&apos;re at the
           forefront of innovative solutions that protect you, your assets, and
           your data.
         </p>
